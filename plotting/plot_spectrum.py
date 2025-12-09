@@ -1,7 +1,11 @@
 import matplotlib.pyplot as plt
 import sys
-sys.path.append("..")
+#sys.path.append("..")
 from source import tools as tls
+
+import os
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE)
 
 #################################### FUNCTIONS ####################################
 
@@ -28,9 +32,10 @@ def read_and_plot(ax,
 
 fig, ax = plt.subplots()
 
-read_and_plot(ax, "../output/0/0_TOA_flux_eclipse.dat", label='your first spectrum')
+datafile = os.path.join(BASE, "output/Trappist_1b_pseudo_bare/Trappist_1b_pseudo_bare_TOA_flux_eclipse.dat")
+read_and_plot(ax, datafile, label='TRAPPIST-1b, 0.1 greybody')
 
-ax.set(yscale='log', xlim=[0.25, 20], xscale='log', xlabel='wavelength ($\mu$m)', ylabel='flux (erg s$^{-1}$ cm$^{-3}$)')
+ax.set(yscale='log', xlim=[0.25, 20], xscale='log', xlabel=r'wavelength ($\mu$m)', ylabel='flux (erg s$^{-1}$ cm$^{-3}$)')
 
 ax.set_xticks([0.5, 1, 2, 3, 5, 10, 20])
 ax.set_xticklabels(['0.5', '1', '2', '3', '5', '10', '20'])

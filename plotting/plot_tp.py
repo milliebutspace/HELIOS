@@ -1,7 +1,11 @@
 import matplotlib.pyplot as plt
 import sys
-sys.path.append("..")
+#sys.path.append("..")
 from source import tools as tls
+
+import os
+BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.append(BASE)
 
 #################################### FUNCTIONS ####################################
 
@@ -22,7 +26,8 @@ def read_and_plot(ax, path, color='blue', shade='darkorange', label='', width=2,
 
 fig, ax = plt.subplots()
 
-read_and_plot(ax, "../output/0/0_tp.dat", label="your first TP-profile")
+datafile = os.path.join(BASE, "output/0/0_tp.dat")
+read_and_plot(ax, datafile, label="your first TP-profile")
 
 ax.set(ylim=[1e3, 1e-6], yscale='log', xlabel=r'temperature (K)', ylabel=r'pressure (bar)')
 

@@ -19,13 +19,20 @@
 #     <http://www.gnu.org/licenses/>.
 # ==============================================================================
 
+
 import numpy as np
 import pycuda.driver as cuda
 import pycuda.autoinit
 import pycuda.gpuarray as gpuarray
-from pycuda.compiler import SourceModule
+
+import pycuda.compiler
+pycuda.compiler.DEFAULT_NVCC_FLAGS = []
+from pycuda.compiler import DynamicSourceModule as SourceModule
+
+
 from source import host_functions as hsfunc
 from source import phys_const as pc
+
 
 
 class Compute(object):
@@ -34,7 +41,14 @@ class Compute(object):
     def __init__(self):
         self.kernel_file = open("./source/kernels.cu")
         self.kernels = self.kernel_file.read()
-        self.mod = SourceModule(self.kernels)
+        self.mod = SourceModule(
+            self.kernels,
+            options=["--gpu-architecture=compute_120"],
+            no_extern_c=True
+        )
+
+
+
 
     def construct_planck_table(self, quant):
         """ constructs the Planck table """

@@ -1,8 +1,3 @@
-// added by user: extern "C" wrapper for PyCUDA
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 // =================================================================================
 // This file contains all the device functions and CUDA kernels.
 // Copyright (C) 2018 - 2022 Matej Malik
@@ -3462,7 +3457,3 @@ __global__ void add_to_mixed_scat(
         scat_cross_lay_or_int[x+nbin*i] += vmr_lay_or_int[i] * scat_cross_spec_lay_or_int[x+nbin*i];
     }
 }
-
-#ifdef __cplusplus
-}
-#endif
