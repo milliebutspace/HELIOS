@@ -13,7 +13,7 @@ See online documentation for a detailed explanation of each parameter --> https:
 
 === === GENERAL === ===
 
-name =                                                Trappist_1b_pseudo_bare    [any string]                                 (CL: Y)
+name =                                                Trappist_1b_co2    [any string]                                 (CL: Y)
 output directory =                                    ./output/                       [directory path]                             (CL: Y)
 realtime plotting =                                   yes                             [yes, no, number > 0]                        (CL: Y)
 planet type =                                         rocky                           [rocky, gas, no_atmosphere]                  (CL: Y)
@@ -21,7 +21,7 @@ planet type =                                         rocky                     
 === === GRID === ===
 
 TOA pressure [10^-6 bar] =                            1e-1                            [number > 0]                                 (CL: Y)
-BOA pressure [10^-6 bar] =                            2.5e-1                             [number > 0]                                 (CL: Y)
+BOA pressure [10^-6 bar] =                            1e+8                             [number > 0]                                 (CL: Y)
 
 === === ITERATION === ===
 
@@ -36,7 +36,7 @@ direct irradiation beam =                             no                        
   no  --> f factor =                                  0.25                           [number: 0.25 - 1]                           (CL: Y)
   yes --> stellar zenith angle [deg] =                60                              [number: 0 - 89]                             (CL: Y)
 internal temperature [K] =                            0.0                              [number > 0]                                 (CL: Y)
-surface albedo =                                      file                           [file, number: 0 - 1]                        (CL: Y)
+surface albedo =                                      0.0                           [file, number: 0 - 1]                        (CL: Y)
   file --> path to albedo file =                      ./input/albedos/tholeiiticbasalt_new.dat              [path to file]                               (CL: Y)
   file --> albedo file format =                       0 wavelength micron             [#skip, wavel.col., wavel.unit[micron,cm,m]] (CL: N)
   file --> surface name =                             albedo                        [column with surface data]                   (CL: Y)
