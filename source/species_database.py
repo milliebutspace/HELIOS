@@ -85,6 +85,8 @@ species_lib["AlH"] = Species_db(name="AlH", fc_name="Al1H1", weight=27.9889)
 species_lib["MgH"] = Species_db(name="MgH", fc_name="H1Mg1", weight=25.3129)
 species_lib["CrH"] = Species_db(name="CrH", fc_name="Cr1H1", weight=53.0040)
 species_lib["NaH"] = Species_db(name="NaH", fc_name="H1Na1", weight=23.99771)
+species_lib["KCl"] = Species_db(name="KCl", fc_name="K1Cl1", weight=74.5513)
+species_lib["NaCl"] = Species_db(name="NaCl", fc_name="Na1Cl1", weight=58.44277)
 
 # neutral atoms
 species_lib["H"] = Species_db(name="H", fc_name="H", weight=1.007825)
