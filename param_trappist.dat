@@ -13,7 +13,7 @@ See online documentation for a detailed explanation of each parameter --> https:
 
 === === GENERAL === ===
 
-name =                                                Trappist_1b_N2_NaCl    [any string]                                 (CL: Y)
+name =                                                Trappist_1b_NaCl    [any string]                                 (CL: Y)
 output directory =                                    ./output/                       [directory path]                             (CL: Y)
 realtime plotting =                                   yes                             [yes, no, number > 0]                        (CL: Y)
 planet type =                                         rocky                           [rocky, gas, no_atmosphere]                  (CL: Y)
@@ -46,8 +46,8 @@ rocky planet --> use f approximation formula =        yes                       
 
 opacity mixing =                                      on-the-fly                      [premixed, on-the-fly]                       (CL: Y)
   premixed   --> path to opacity file =               ./input/CO2_opac_ip_kdistr.h5   [file path]                                  (CL: Y)
-  on-the-fly --> path to species file =               ./input/species/species_N2NaCl.dat             [file path]                                  (CL: Y)
-  on-the-fly --> file with vertical mixing ratios =   ./input/species/vmr_mix_N2NaCl.txt             [file path]                                  (CL: Y)
+  on-the-fly --> path to species file =               ./input/species/species_NaCl.dat             [file path]                                  (CL: Y)
+  on-the-fly --> file with vertical mixing ratios =   ./input/species/vmr_mix_NaCl.txt             [file path]                                  (CL: Y)
   on-the-fly --> vertical VMR file format =           1 Pressure cgs                  [#skip, press.col., press.unit[cgs,Pa,bar]]  (CL: N)
   on-the-fly --> directory with FastChem files =      ./input/chemistry/lodders_m0/   [directory path]                             (CL: Y)
   on-the-fly --> directory with opacity files =       ./input/opacity/r50_kdistr/     [directory path]                             (CL: Y)
