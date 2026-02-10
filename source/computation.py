@@ -25,9 +25,9 @@ import pycuda.driver as cuda
 import pycuda.autoinit
 import pycuda.gpuarray as gpuarray
 
-import pycuda.compiler
-pycuda.compiler.DEFAULT_NVCC_FLAGS = []
-from pycuda.compiler import DynamicSourceModule as SourceModule
+# import pycuda.compiler
+# pycuda.compiler.DEFAULT_NVCC_FLAGS = []
+# from pycuda.compiler import DynamicSourceModule as SourceModule
 
 
 from source import host_functions as hsfunc
@@ -39,15 +39,11 @@ class Compute(object):
     """ class incorporating the computational core of HELIOS """
 
     def __init__(self):
-        self.kernel_file = open("./source/kernels.cu")
-        self.kernels = self.kernel_file.read()
-        self.mod = SourceModule(
-            self.kernels,
-            options=["--gpu-architecture=compute_120"],
-            no_extern_c=True
-        )
-
-
+        # self.kernel_file = open("./source/kernels.cu")
+        # self.kernels = self.kernel_file.read()
+        # self.mod = SourceModule(self.kernels, options=["--gpu-architecture=compute_120"], no_extern_c=True)
+        with open("./source/kernels.cubin", "rb") as f:
+            self.mod = cuda.module_from_buffer(f.read())
 
 
     def construct_planck_table(self, quant):

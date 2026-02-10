@@ -1,3 +1,4 @@
+
 // added by user: extern "C" wrapper for PyCUDA
 #ifdef __cplusplus
 extern "C" {
@@ -3466,3 +3467,4 @@ __global__ void add_to_mixed_scat(
 #ifdef __cplusplus
 }
 #endif
+
